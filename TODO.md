@@ -18,3 +18,6 @@ Building process:
 [x] How to call Ollama from Python?
 	- https://github.com/ollama/ollama-python
 	- pip install ollama
+	- API Docs: https://github.com/ollama/ollama/blob/main/docs/api.md
+[x] Test Llama3.2
+	- Translate words into nmap commands successfully, but theres so much explanation. Find a way to get just the nmap command.
