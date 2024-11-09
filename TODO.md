@@ -6,7 +6,7 @@ TO DO:
 [ ] Find a way to output useful insights.
 
 Evaluate stack:
-[x] Ollama, the easiest way to start
+[x] Ollama, the easiest way to start (https://ollama.com/)
 [ ] Llama 3.1? -> LLM optimized for NLP tasks
 [ ] Llama 3.2? -> LLM text and images
 [ ] LlamaIndex? -> ??
