@@ -20,4 +20,7 @@ Building process:
 	- pip install ollama
 	- API Docs: https://github.com/ollama/ollama/blob/main/docs/api.md
 [x] Test Llama3.2
-	- Translate words into nmap commands successfully, but theres so much explanation. Find a way to get just the nmap command.
+	- Translate words into nmap commands successfully, but theres so much explanation. 
+[x] Changed mode from chat to streaming (better experience) [stream=True flag].
+[ ] Find a way to make the program interactive (input from console).
+[ ] Find a way to get just the nmap command.
