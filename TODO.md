@@ -23,5 +23,5 @@ Building process:
 	- Translate words into nmap commands successfully, but theres so much explanation. 
 [x] Changed mode from chat to streaming (better experience) [stream=True flag].
 [x] Find a way to make the program interactive (input from console).
-[ ] Find a way to get just the nmap command.
+[x] Find a way to get just the nmap command.
 	- Study how to write a good prompt on llama
