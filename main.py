@@ -17,15 +17,19 @@ while True:
 		stream=True,
 	)
 	
-	# Read llama output word by word
+	# Return response word by word in the terminal and store it on response_command
+	response_command = ""
 	for chunk in stream:
 		print(chunk['message']['content'], end='', flush=True)
+		response_command += chunk['message']['content']
 	
 	# Add some separation to the console output
 	print()
 	print()
 	print()
 
+	# Use response_command to execute command
+	print(response_command)
 
 
 
