@@ -5,3 +5,8 @@ TO DO:
 [ ] Find a way to execute those commands.
 [ ] Find a way to output useful insights.
 
+Evaluate stack:
+[ ] Llama 3.1? -> LLM optimized for NLP tasks
+[ ] Llama 3.2? -> LLM text and images
+[ ] LlamaIndex? -> ??
+[ ] Evaluate https://github.com/mindsdb/mindsdb for storing and processing data
