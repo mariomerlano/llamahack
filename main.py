@@ -1,10 +1,10 @@
 import ollama
 
-response = ollama.chat(model='llama3.2', messages=[
-  {
-    'role': 'user',
-    'content': 'Just give me the command of nmap to scan ports from 1 to 1000 using TCP SYN ',
-  },
-])
+stream = ollama.chat(
+    model='llama3.2',
+    messages=[{'role': 'user', 'content': 'Why is the sky blue?'}],
+    stream=True,
+)
 
-print(response['message']['content'])
+for chunk in stream:
+  print(chunk['message']['content'], end='', flush=True)
