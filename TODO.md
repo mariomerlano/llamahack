@@ -13,3 +13,8 @@ Evaluate stack:
 [ ] Llama 3.2? -> LLM text and images
 [ ] LlamaIndex? -> ??
 [ ] Evaluate https://github.com/mindsdb/mindsdb for storing and processing data
+
+Building process:
+[x] How to call Ollama from Python?
+	- https://github.com/ollama/ollama-python
+	- pip install ollama
