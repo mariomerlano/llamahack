@@ -7,6 +7,8 @@ TO DO:
 
 Evaluate stack:
 [x] Ollama, the easiest way to start (https://ollama.com/)
+	- Download from https://ollama.com/download
+	- ollama run llama3.2 (run local model)
 [ ] Llama 3.1? -> LLM optimized for NLP tasks
 [ ] Llama 3.2? -> LLM text and images
 [ ] LlamaIndex? -> ??
