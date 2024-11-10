@@ -5,4 +5,5 @@ Hack systems using your words! Next-gen pentest tool using Llama. Private and se
 	- ollama
 	- nmap
 	- gobuster
+	- https://github.com/danielmiessler/SecLists
 
