@@ -1,8 +1,8 @@
 Final goal: Build a pentesting tool that you can chat and it just runs commands for you.
 
 TO DO:
-[ ] Find a way to translate words into commands (I suppose using Llama).
-[ ] Find a way to execute those commands.
+[x] Find a way to translate words into commands (I suppose using Llama).
+[x] Find a way to execute those commands.
 [ ] Find a way to output useful insights.
 
 Evaluate stack:
@@ -25,3 +25,31 @@ Building process:
 [x] Find a way to make the program interactive (input from console).
 [x] Find a way to get just the nmap command.
 	- Study how to write a good prompt on llama
+[x] Find a way to execute those commands.
+	- Pending: improve it.
+
+
+----------------------
+
+
+Key points:
+	- How to get control before the command is executed? if? retry?
+	- How to put constraints that needs to be completed before any command? -> custom inputs by hand? for example domain, etc. How to handle errors?
+	- Use of selenium to browser-related tasks?
+	- How to feed llama with useful links like SecLists for fuzzing? Or links with cheatsheets of hacking, etc. MindsDB?
+	- Separate with stages with custom menu? Like Discovery stage, exploitation, etc
+	- I feel that i have to give to llama a lot of knoledge on how to hack, which stuff be careful, etc, improve prompts, include context (domain, constraints, sites, etc).
+
+Usage:
+	- Say to llama that we want to conduct a pentest on this domain, using this techniches, with this restrictions
+
+
+----------------------
+
+
+# IMPORTANT KEY NOTES:
+#       - You have to teach to llama how to hack (guide like a kid)
+#       - Simplify the process to 1 o 2 attacks (maybe fuzzing for domain discovery, etc)
+#       - You can use llama to get commands (already) and also to interpret the results (after i teach like a kid), also you can use llama to make checks for the command and ask for a thing and exit the program. Give feedback and exit. To not implement everyhing. Not run until all the criteria is completed.
+#       - You can rely on llama to anything you want. Is up to you how much you program and how much you give to llama
+#       - You can use also Selenium to open the browser o whatever, you can do whatever you want. Its a python program.
