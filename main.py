@@ -2,6 +2,9 @@ import ollama
 
 # Mandatory fields
 domain = input("Domain or IP to attack: ")
+if not domain:
+    print("You must provide a valid domain or IP address to continue.")
+    exit()
 
 while True:
 	# User input from console
@@ -11,9 +14,10 @@ while True:
 	prompt_to_llama = """
 		System: You are a helpful command line assistant. Provide only the exact command(s) needed, without any explanation or additional text. Do not use markdown formatting. You can also respond only when some argument given by the user is missing.
         System: For now, you must be limited just to 2 commands: nmap and gobuster with their specific flags and arguments.
-        System: If a nmap command is generated and is not given any domain, you must say "You must give a domain to start the attack" and return an exit() command.
+        System: You must only output 1 command.
 		User input: {}
-	""".format(user_console_input)
+        User input: {}
+	""".format(domain, user_console_input)
 
 	# Send prompt to llama
 	stream = ollama.chat(
