@@ -5,6 +5,7 @@ TO DO:
 [x] Find a way to translate words into commands (I suppose using Llama).
 [x] Find a way to execute those commands.
 [ ] Find a way to output useful insights.
+[ ] Improve performance to iterate over dictionaries (maybe select just subsets based on llama response)
 
 Evaluate stack:
 [x] Ollama, the easiest way to start (https://ollama.com/)

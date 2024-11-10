@@ -13,6 +13,14 @@ if not os.path.exists("./SecLists"):
 	print("You must download https://github.com/danielmiessler/SecLists.git")
 	exit()
 
+# Create a variable with all the files from SecLists
+seclists_file_names = ""
+for root, dirs, files in os.walk("./SecLists"):
+	for file in files:
+		# print(os.path.join(root, file))
+		seclists_file_names += os.path.join(root, file) + "\n"
+# print(seclists_file_names)
+
 while True:
 	# User input from console
 	user_console_input = input("Describe attack: ") # writes output to console
@@ -21,10 +29,13 @@ while True:
 	prompt_to_llama = """
 		System: You are a helpful command line assistant. Provide only the exact command(s) needed, without any explanation or additional text. Do not use markdown formatting. You can also respond only when some argument given by the user is missing.
         System: For now, you must be limited just to 2 commands: nmap and gobuster with their specific flags and arguments.
-        System: You must only output 1 command.
+	System: Additional info for gobuster: {}
+	System: The additional info for gobuster are all the possible files that llama can select in order to do a brute-force attack using gobuster. Just select 1 file path and use it in the gobuster command.
+	System: Please note that you must replace the path to wordlist with the actual path to your guessed wordlist file, and ensure that it's in a format compatible with Gobuster.
 		User input: {}
-        User input: {}
-	""".format(domain, user_console_input)
+        	User input: {}
+        System: You must only output 1 command.
+	""".format(seclists_file_names, domain, user_console_input)
 
 	# Send prompt to llama
 	stream = ollama.chat(
