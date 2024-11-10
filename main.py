@@ -19,6 +19,18 @@ if not os.path.exists("./SecLists"):
 	print("You must download https://github.com/danielmiessler/SecLists.git")
 	exit()
 
+# call llama
+def llama(prompt):
+	response = ollama.chat(model='llama3.2', messages=[
+		{
+			'role': 'user',
+			'content': prompt,
+		},
+	])
+	llama_response = response['message']['content']
+	print(llama_response)
+	return llama_response
+
 # Get hacking command based on natural language
 def get_hacking_command():
 	# User input from console
@@ -35,14 +47,7 @@ def get_hacking_command():
 
 	print("Loading...")
 	# Send prompt to llama
-	response = ollama.chat(model='llama3.2', messages=[
-	{
-		'role': 'user',
-		'content': prompt_to_llama,
-	},
-	])
-	# print(response['message']['content'])
-	hacking_command = response['message']['content']
+	hacking_command = llama(prompt_to_llama)
 	
 	return hacking_command # return hacking command
 
@@ -54,8 +59,11 @@ while True:
 
 	# check if is gobuster to include dictionaries paths in the prompt
 	if "gobuster" in hacking_command:
-		print("there is a gobuster command")
-		# TODO: add
+		print("gobuster command detected!")
+
+		print("Guessing dictionary to apply... (it takes a while, please be patient!)")
+		# Interesting: Give me the folders to do a subdomain enumeration from https://github.com/danielmiessler/SecLists
+
 		# System: The additional info for gobuster are all the possible files that llama can select in order to do a brute-force attack using gobuster. Just select 1 file path and use it in the gobuster command.
 		# System: Please note that you must replace the path to wordlist with the actual path to your guessed wordlist file, and ensure that it's in a format compatible with Gobuster.
 		# System: Additional info for gobuster: {}
@@ -70,6 +78,7 @@ while True:
 		# print(seclists_file_names)
 	
 	# if not, is a nmap
+	print("nmap command detected!")
 
 	# Use hacking_command to execute command
 	print("COMMAND EXECUTION: " + hacking_command)
