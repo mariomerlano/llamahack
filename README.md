@@ -3,3 +3,6 @@ Hack systems using your words! Next-gen pentest tool using Llama. Private and se
 
 ## Requirements:
 	- ollama
+	- nmap
+	- gobuster
+
