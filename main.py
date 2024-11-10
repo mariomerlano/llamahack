@@ -1,12 +1,17 @@
 import ollama
 
+# Mandatory fields
+domain = input("Domain or IP to attack: ")
+
 while True:
 	# User input from console
-	user_console_input = input("Write something: ") # writes output to console
+	user_console_input = input("Describe attack: ") # writes output to console
 
-	# Prompt to get only commands based on user input
+	# Prompt to get only commands based on user input. We also teach how llama must respond on specific scenarios.
 	prompt_to_llama = """
-		System: You are a helpful command line assistant. Provide only the exact command(s) needed, without any explanation or additional text. Do not use markdown formatting. 
+		System: You are a helpful command line assistant. Provide only the exact command(s) needed, without any explanation or additional text. Do not use markdown formatting. You can also respond only when some argument given by the user is missing.
+        System: For now, you must be limited just to 2 commands: nmap and gobuster with their specific flags and arguments.
+        System: If a nmap command is generated and is not given any domain, you must say "You must give a domain to start the attack" and return an exit() command.
 		User input: {}
 	""".format(user_console_input)
 
