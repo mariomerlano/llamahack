@@ -28,7 +28,7 @@ Building process:
 	- Study how to write a good prompt on llama
 [x] Find a way to execute those commands.
 	- Pending: improve it.
-
+[x] Download dictionaries https://github.com/danielmiessler/SecLists.git to use with gobuster generated-commands
 
 ----------------------
 

@@ -1,11 +1,17 @@
 import ollama
+import os
 import subprocess
 
 # Mandatory fields
 domain = input("Domain or IP to attack: ")
 if not domain:
-    print("You must provide a valid domain or IP address to continue.")
-    exit()
+	print("You must provide a valid domain or IP address to continue.")
+	exit()
+
+# Dictionaries for gobuster
+if not os.path.exists("./SecLists"):
+	print("You must download https://github.com/danielmiessler/SecLists.git")
+	exit()
 
 while True:
 	# User input from console
