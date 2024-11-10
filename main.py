@@ -1,4 +1,5 @@
 import ollama
+import subprocess
 
 # Mandatory fields
 domain = input("Domain or IP to attack: ")
@@ -38,7 +39,8 @@ while True:
 	print()
 
 	# Use response_command to execute command
-	print(response_command)
+	print("COMMAND EXECUTION: " + response_command)
+	output = subprocess.check_output([response_command], shell=True)
 
 
 

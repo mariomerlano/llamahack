@@ -1,4 +1,5 @@
 Final goal: Build a pentesting tool that you can chat and it just runs commands for you.
+IMPORTANT: execute as root as your own responsability, it's required for many nmap scans.
 
 TO DO:
 [x] Find a way to translate words into commands (I suppose using Llama).
